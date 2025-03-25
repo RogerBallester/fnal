@@ -1,0 +1,132 @@
+[gd_scene load_steps=20 format=3 uid="uid://vpyg81ivgdsf"]
+
+[ext_resource type="Texture2D" uid="uid://cexn10148br1m" path="res://Arbol de escenas/assets/FNAF ASSETS REORGANIZED BY ENTEREST/2-MENU_TWITCHING/1.png" id="1_g5l6t"]
+[ext_resource type="Script" path="res://menu.gd" id="1_tlf06"]
+[ext_resource type="Texture2D" uid="uid://bsomy2flnjx0c" path="res://Arbol de escenas/assets/FNAF ASSETS REORGANIZED BY ENTEREST/2-MENU_TWITCHING/2.png" id="2_6mfv7"]
+[ext_resource type="Texture2D" uid="uid://bvwfowj0v6qgo" path="res://Arbol de escenas/assets/FNAF ASSETS REORGANIZED BY ENTEREST/2-MENU_TWITCHING/3.png" id="3_ipg37"]
+[ext_resource type="Texture2D" uid="uid://bprepmyvw1ihs" path="res://Arbol de escenas/assets/FNAF ASSETS REORGANIZED BY ENTEREST/2-MENU_TWITCHING/4.png" id="4_1o5jq"]
+[ext_resource type="Texture2D" uid="uid://bxgmojqd0qtjh" path="res://Arbol de escenas/assets/FNAF ASSETS REORGANIZED BY ENTEREST/0-STATIC/1.png" id="5_hqjaj"]
+[ext_resource type="Texture2D" uid="uid://b6rtk5wxfdd71" path="res://Arbol de escenas/assets/FNAF ASSETS REORGANIZED BY ENTEREST/0-STATIC/2.png" id="6_pgc3t"]
+[ext_resource type="Texture2D" uid="uid://0voloqp5xll3" path="res://Arbol de escenas/assets/FNAF ASSETS REORGANIZED BY ENTEREST/0-STATIC/3.png" id="7_frl6q"]
+[ext_resource type="Texture2D" uid="uid://dbggm3ywgokb5" path="res://Arbol de escenas/assets/FNAF ASSETS REORGANIZED BY ENTEREST/0-STATIC/4.png" id="8_q2kcx"]
+[ext_resource type="Texture2D" uid="uid://b4j4nqnmgnp7m" path="res://Arbol de escenas/assets/FNAF ASSETS REORGANIZED BY ENTEREST/0-STATIC/5.png" id="9_eo8hx"]
+[ext_resource type="Texture2D" uid="uid://cmb5oc20hhsfd" path="res://Arbol de escenas/assets/FNAF ASSETS REORGANIZED BY ENTEREST/0-STATIC/6.png" id="10_5prva"]
+[ext_resource type="Texture2D" uid="uid://clj5fixvplr5b" path="res://Arbol de escenas/assets/FNAF ASSETS REORGANIZED BY ENTEREST/0-STATIC/7.png" id="11_5wtoi"]
+[ext_resource type="Texture2D" uid="uid://drg0x5400kd4m" path="res://Arbol de escenas/assets/FNAF ASSETS REORGANIZED BY ENTEREST/0-STATIC/8.png" id="12_iul5k"]
+[ext_resource type="Texture2D" uid="uid://c455ujsdqt6sq" path="res://Arbol de escenas/assets/FNAF ASSETS REORGANIZED BY ENTEREST/1-MAIN_TEXT/BUTTON01.png" id="13_gjje8"]
+[ext_resource type="Texture2D" uid="uid://bo604r2nk44rg" path="res://Arbol de escenas/assets/FNAF ASSETS REORGANIZED BY ENTEREST/1-MAIN_TEXT/BUTTON02.png" id="14_nfy1q"]
+[ext_resource type="Texture2D" uid="uid://d61bb54mtltu" path="res://Arbol de escenas/assets/FNAF ASSETS REORGANIZED BY ENTEREST/1-MAIN_TEXT/SET_.png" id="15_ywldr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ho1tp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g5l6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6mfv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ipg37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1o5jq")
+}],
+"loop": true,
+"name": &"movimiento",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_met1p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_hqjaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pgc3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_frl6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_q2kcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_eo8hx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5prva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5wtoi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_iul5k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jyqhf"]
+font_size = 81
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_tlf06")
+
+[node name="animaciones" type="AnimatedSprite2D" parent="."]
+position = Vector2(575.5, 325)
+scale = Vector2(0.900781, 0.902778)
+sprite_frames = SubResource("SpriteFrames_ho1tp")
+animation = &"movimiento"
+
+[node name="estatica" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.333333)
+position = Vector2(575.5, 325)
+scale = Vector2(0.900781, 0.902778)
+sprite_frames = SubResource("SpriteFrames_met1p")
+frame_progress = 0.649796
+
+[node name="newgame" type="Button" parent="."]
+offset_left = 131.5
+offset_top = 434.0
+offset_right = 347.5
+offset_bottom = 491.0
+icon = ExtResource("13_gjje8")
+
+[node name="continue" type="Button" parent="."]
+offset_left = 130.5
+offset_top = 500.0
+offset_right = 346.5
+offset_bottom = 557.0
+icon = ExtResource("14_nfy1q")
+
+[node name="Set" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(74.5, 465)
+texture = ExtResource("15_ywldr")
+
+[node name="Set2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(75.5, 530)
+texture = ExtResource("15_ywldr")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 67.0
+offset_top = 74.0
+offset_right = 316.0
+offset_bottom = 299.0
+text = "LITTLE 
+JOY'S"
+label_settings = SubResource("LabelSettings_jyqhf")
+
+[node name="tiempo" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="mouse_entered" from="newgame" to="." method="_on_newgame_mouse_entered"]
+[connection signal="mouse_exited" from="newgame" to="." method="_on_newgame_mouse_exited"]
+[connection signal="mouse_entered" from="continue" to="." method="_on_continue_mouse_entered"]
+[connection signal="mouse_exited" from="continue" to="." method="_on_continue_mouse_exited"]
+[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]
+[connection signal="timeout" from="tiempo" to="." method="_on_tiempo_timeout"]
